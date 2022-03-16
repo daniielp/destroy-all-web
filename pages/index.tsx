@@ -27,6 +27,7 @@ const Home: NextPage = () => {
         <a
           href="https://daniiel.dev"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Created by{' '}
           <span className={styles.logo}>
