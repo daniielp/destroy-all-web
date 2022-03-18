@@ -7,9 +7,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Destroy All Web</title>
-        <meta name="description" content="Get to know all the good parts about the web we use everyday." />
-        <link rel="icon" href="/favicon.ico" />
+        
       </Head>
 
       <main className={styles.main}>
