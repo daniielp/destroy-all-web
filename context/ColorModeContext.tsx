@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@mui/system';
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
-import { createTheme } from "@mui/material/styles";
+import { createContext, useContext, useMemo, useState } from 'react'
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 interface IColorModeContext {
     toggleColorMode: () => void;
@@ -25,11 +25,11 @@ export const ColorModeProvider: React.FC = ({ children }) => {
 
 
     const theme = useMemo(
-        () => createTheme({
+        () => responsiveFontSizes(createTheme({
             palette: {
                 mode,
             }
-        }), [mode]
+        })), [mode]
     );
 
     return (

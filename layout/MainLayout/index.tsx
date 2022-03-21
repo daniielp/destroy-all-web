@@ -6,9 +6,9 @@ function MainLayout(props: any) {
     return (
         <React.Fragment>
             <Header />
-            <div id="main-content">
+            <main>
                 {props.children}
-            </div>
+            </main>
             <Footer />
         </React.Fragment>
     )

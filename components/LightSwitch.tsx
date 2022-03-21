@@ -56,7 +56,7 @@ const LightSwitch = () => {
     return (
         <FormGroup>
             <Tooltip title={mode === "light" ? "Turn off light mode" : "Turn on light mode"}>
-                <FormControlLabel control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />} label="" onChange={toggleColorMode}></FormControlLabel>
+                <FormControlLabel control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />} sx={{ mr: 0,}} label="" onChange={toggleColorMode}></FormControlLabel>
             </Tooltip>
         </FormGroup>
 

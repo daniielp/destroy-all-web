@@ -1,39 +1,11 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import { Box, Button, Typography } from '@mui/material'
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
-    <div className={styles.container}>
-      <Head>
-        
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://destroyallweb.com">Destroy All Web</a>
-        </h1>
-
-        <p className={styles.description}>
-          Creating attack{' '}
-          <code className={styles.code}>loading...</code>
-        </p>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://daniiel.dev"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Created by{' '}
-          <span className={styles.logo}>
-            Daniiel Pedersen
-          </span>
-        </a>
-      </footer>
-    </div>
+    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', minHeight: '90vh' }}>
+      <Typography component="h1" variant="h1" align="center" sx={{ fontWeight: 'bold' }} gutterBottom>Welcome to <Typography component="span" variant="inherit" color="primary.main">Destroy All Web</Typography></Typography>
+      <Button variant="contained" href="blog">Go to blog</Button>
+    </Box>
   )
 }
 
