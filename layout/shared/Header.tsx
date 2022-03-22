@@ -1,4 +1,4 @@
-import { AppBar, Box, Toolbar, Typography, Link } from '@mui/material'
+import { AppBar, Box, Toolbar, Link } from '@mui/material'
 import React from 'react'
 import LightSwitch from '../../components/LightSwitch'
 

@@ -1,11 +1,14 @@
 import { ThemeProvider } from '@mui/system';
-import { createContext, useContext, useMemo, useState } from 'react'
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
+import useLocalStorage from '../hooks/useLocalStorage'
 
 interface IColorModeContext {
     toggleColorMode: () => void;
     mode: "dark" | "light";
 }
+
+
 
 export const ColorModeContext = createContext<IColorModeContext>({
     toggleColorMode: () => { },
@@ -13,6 +16,7 @@ export const ColorModeContext = createContext<IColorModeContext>({
 })
 
 export const ColorModeProvider: React.FC = ({ children }) => {
+    const [localMode, setLocalMode] = useLocalStorage("themeMode", "light")
     const [mode, setMode] = useState<"light" | "dark">("light");
     const colorMode = useMemo(
         () => ({
@@ -22,6 +26,10 @@ export const ColorModeProvider: React.FC = ({ children }) => {
             mode,
         }), [mode]
     );
+
+    useEffect(() => {
+        setLocalMode(mode)
+    }, [mode])
 
 
     const theme = useMemo(

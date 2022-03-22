@@ -1,8 +1,9 @@
 import { FormControlLabel, FormGroup, Tooltip } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ColorModeContext } from '../context/ColorModeContext';
+import useLocalStorage from '../hooks/useLocalStorage'
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -53,10 +54,18 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const LightSwitch = () => {
     const { mode, toggleColorMode } = useContext(ColorModeContext)
+    const [localMode] = useLocalStorage("themeMode", "light")
+
+    useEffect(() => {
+        if(mode != localMode) {
+            toggleColorMode()
+        }
+    }, [])
+
     return (
         <FormGroup>
             <Tooltip title={mode === "light" ? "Turn off light mode" : "Turn on light mode"}>
-                <FormControlLabel control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />} sx={{ mr: 0,}} label="" onChange={toggleColorMode}></FormControlLabel>
+                <FormControlLabel control={<MaterialUISwitch sx={{ m: 1 }} checked={mode === "light" ? true : false} />} sx={{ mr: 0,}} label="" onChange={toggleColorMode}></FormControlLabel>
             </Tooltip>
         </FormGroup>
 
