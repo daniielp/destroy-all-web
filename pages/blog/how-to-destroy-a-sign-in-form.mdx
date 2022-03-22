@@ -1,0 +1,29 @@
+import SignInForm from "../../components/SignInForm.tsx";
+
+export const meta = {
+  author: "Daniel Pedersen",
+};
+
+<h1 align="center">How to destroy a sign in form</h1>
+
+We can all find examples on the internet of what people think is the best way to create a sign-in form. But how can we destroy it? That's what I'm going to find out.
+
+## Error handling
+
+On user input fields it's a good idea to let the user know if something went wrong or if the request didn't go through successfully. But we want to make sure the user knows exactly what the issue is.
+
+<SignInForm />
+
+## Detailed fields
+
+We all like when some of the big companies want our personal details. So why not add it every time a user tries to sign in ;) Because "what the hell are you gonna use our credit card information for".
+
+
+<SignInForm step="2" />
+
+
+## Button text
+
+Remember to create very long text for you buttons
+
+<SignInForm step="3" />
