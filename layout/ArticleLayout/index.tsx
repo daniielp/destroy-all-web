@@ -7,7 +7,7 @@ function MainLayout(props: any) {
         <>
             <Header />
             <main>
-                <Container>
+                <Container maxWidth="md">
                     {props.children}
                 </Container>
             </main>
