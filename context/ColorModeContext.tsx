@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@mui/system';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
-import useLocalStorage from '../hooks/useLocalStorage'
+import useLocalStorage from '../hooks/useLocalStorage';
 
 interface IColorModeContext {
     toggleColorMode: () => void;
@@ -36,6 +36,15 @@ export const ColorModeProvider: React.FC = ({ children }) => {
         () => responsiveFontSizes(createTheme({
             palette: {
                 mode,
+                primary: {
+                    main: "#00DC82",
+                    light: "#80EEC0",
+                },
+                secondary: {
+                    dark: "#012A35",
+                    main: "#003543",
+                    light: "#497A87",
+                },
             }
         })), [mode]
     );
