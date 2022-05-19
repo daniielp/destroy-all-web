@@ -6,6 +6,13 @@ const data = [
         "tags": ["ui/ux", "forms"],
         "date": new Date("2022-3-21"),
     },
+    {
+        "title": "How to generate a phone number field",
+        "description": "If you're working on a web project, chances are you'll need to generate a phone number field at some point. ",
+        "slug": "how-to-generate-a-phone-number-field",
+        "tags": ["ui/ux", "forms"],
+        "date": new Date("2022-5-19"),
+    }
     
 ]
 
